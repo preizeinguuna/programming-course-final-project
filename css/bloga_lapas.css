@@ -1,0 +1,155 @@
+/* General styles */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: none;
+}
+
+/* Grid layout styles */
+.wraper{
+    display: grid;
+    grid-template-columns: 300px 1000px;
+    background-color: white;
+    max-width: 1200px;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left h2{
+    color: #77990f;
+    font-size: 16pt;
+    padding-top: 90px;
+}
+
+.left p > a{
+    font-size: 14pt;
+    color:#77990f;
+    text-decoration: none;
+    padding: 10px;
+}
+
+div img{
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+
+.left #line{
+    border-left: 3px solid #77990f;
+    height: 730px;
+    position: fixed;
+    left: 18%;
+    margin-left: 3px;
+    top: 120px; 
+}
+
+.step-section-container{
+    display: grid;
+    grid-template-columns: 1000px;
+    padding-left: 300px;
+}
+
+.step-item--title h1{
+    text-align: center;
+    color: #77990f;
+    font-size: 16pt;
+    padding-top: 90px;
+}
+
+input, #status {
+    width: 70%; /* Increase the width to make them wider */
+    max-width: 400px; /* Set a maximum width to prevent excessive stretching */
+    height: 40px; /* Increase the height to make them taller */
+}
+
+/* CSS for form labels */
+label {
+    color: #0f7799;
+    font-weight: bold;
+}
+
+
+.submit {
+    background-color: #0f7799;
+    width: 70%; /* Increase the width to make it wider */
+    max-width: 1000px; /* Set a maximum width to prevent excessive stretching */
+    height: 40px; /* Increase the height to make it taller */
+    color: white;
+}
+
+
+input[type="checkbox"] {
+    width: 30px;
+    height: 25px;
+}
+
+#lname{
+    color:lightgray;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin: 0 auto; /* This centers the table on the page */
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #DEE6ED;
+    text-align: center;
+    padding: 15px 10px; /* Added padding to table cells */
+}
+
+table th {
+    background-color: #77990f;
+    color: #FFFFFF;
+}
+
+table td {
+    height: 30px;
+}
+
+table tr:nth-child(even) td {
+    background-color: #e7edf0;
+}
+
+/* Grid layout styles */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.blog-entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top of the grid item */
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.blog-entry h2 {
+    margin-top: 0;
+    font-size: 20px;
+    text-align: left; /* Align the title to the left */
+}
+
+.blog-entry p {
+    text-align: justify;
+    line-height: 1.2;
+    font-size: 16px;
+}
+
+/* If you want to change the layout of the right section container */
+.right-section-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Change the number of columns to adjust the width */
+    grid-gap: 10px;
+}
