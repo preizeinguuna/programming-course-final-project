@@ -97,10 +97,13 @@ while ($row = mysqli_fetch_assoc($result)) {
         </div>
     </div>
 
-    <footer>
+     <footer>
         <div class="footer">
             <p>Website Developer: <b>Ingūna Preize</b> © 2021 All rights reserved</p>
         </div>
     </footer>
+
+    <!-- Adjust the path to the JavaScript file using the root-relative path -->
+    <script src="/BLOGS/js/script.js"></script>
 </body>
 </html>
