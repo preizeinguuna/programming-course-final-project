@@ -1,7 +1,5 @@
 # Programming course final project
 
-![Live Demo]([https://your-live-demo-url.com](https://all-about-blogs.infinityfreeapp.com/))
-
 ## Description
 This static web page was created in 2021 to demonstrate HTML, CSS, and JavaScript skills as part of a programming course. The project contains a simple blog management system with features such as a navigation bar, blog entry display, and the ability to add and edit blog posts.
 
