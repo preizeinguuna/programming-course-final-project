@@ -77,5 +77,8 @@ if (mysqli_num_rows($result) > 0) {
             <p>Website Developer: <b>Ingūna Preize</b> © 2021 All rights reserved</p>
         </div>
     </footer>
+    
+     <!-- Adjust the path to the JavaScript file using the root-relative path -->
+    <script src="/BLOGS/js/script.js"></script>
 </body>
 </html>
