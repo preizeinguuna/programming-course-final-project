@@ -47,16 +47,16 @@ if (isset($_GET['id'])) {
     <title>Blog entry page</title>
 
     <!-- Adjust the paths to the CSS files using the root-relative paths-->
-   <link rel="stylesheet" href="/BLOGS/css/style.css">
-   <link rel="stylesheet" href="/BLOGS/css/bloga_lapas.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/bloga_lapas.css">
 </head>
 <body>
    <nav>
-        <img src="/BLOGS/img/logo-lat.jpg" alt="logo">
+        <img src="img/logo-lat.jpg" alt="logo">
         <ul>
            <li>News</li>
              <li>About us</li>
-             <li><a href="/BLOGS/bloga_lapa1.php" class="navbar-item">Blog</a></li>
+             <li><a href="bloga_lapa1.php" class="navbar-item">Blog</a></li>
              <li>Contacts</li>
          </ul>
     </nav>
@@ -67,8 +67,8 @@ if (isset($_GET['id'])) {
            <h2>Options</h2>
             <div id="line"></div>
             <div>
-               <p><img src="/BLOGS/img/add.jpg" alt="add"><a href="/BLOGS/bloga_lapa4.php">Add new</a></p>
-                <p><img src="/BLOGS/img/edit.jpg" alt="edit"><a href="/BLOGS/bloga_lapa3.php">Review the record</a></p>
+               <p><img src="img/add.jpg" alt="add"><a href="bloga_lapa4.php">Add new</a></p>
+                <p><img src="img/edit.jpg" alt="edit"><a href="bloga_lapa3.php">Review the record</a></p>
             </div>
         </div>
         <div class="right">
@@ -89,8 +89,13 @@ if (isset($_GET['id'])) {
         </div>
     </div>
 
-    <div class="footer">
-        <p>Website Developer: <b>Ingūna Preize</b> © 2021 All rights reserved</p>
-    </div>
+  <footer>
+        <div class="footer">
+            <p>Website Developer: <b>Ingūna Preize</b> © 2021 All rights reserved</p>
+        </div>
+    </footer>
+
+    <!-- Adjust the path to the JavaScript file using the root-relative path -->
+    <script src="/BLOGS/js/script.js"></script>
 </body>
 </html>
