@@ -32,6 +32,9 @@ if (isset($_GET['id'])) {
 		// Handle error if entry with given id doesn't exist
 		// You can redirect or display an error message here
 	}
+} else {
+	// Set $entry_id to null or any default value when adding a new entry
+	$entry_id = null;
 }
 
 // Add the PHP code here to handle form submission for both adding and editing
@@ -44,13 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$status = mysqli_real_escape_string($connection, $_POST["status"]);
 	$publicity = isset($_POST["publicity"]) ? "Yes" : "No";
 
-	if (isset($_GET['id'])) {
+	if (isset($entry_id)) {
 		// Update the existing entry in the database
 		$query = "UPDATE blog_entries SET title='$title', subtitle='$subtitle', author='$author', content='$content', status='$status', publicity='$publicity' WHERE id=$entry_id";
 	} else {
 		// Insert the new entry into the database
-		$query = "INSERT INTO blog_entries (title, subtitle, author, content, status, publicity)
-                  VALUES ('$title', '$subtitle', '$author', '$content', '$status', '$publicity')";
+		$query = "INSERT INTO blog_entries (title, subtitle, author, content, status, publicity) VALUES ('$title', '$subtitle', '$author', '$content', '$status', '$publicity')";
 	}
 
 	$result = mysqli_query($connection, $query);
@@ -99,6 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div>
                <p><img src="/BLOGS/img/add.jpg" alt="add"><a href="/BLOGS/bloga_lapa4.php">Add new</a></p>
                 <p><img src="/BLOGS/img/edit.jpg" alt="edit"><a href="/BLOGS/bloga_lapa3.php">Review the record</a></p>
+
             </div>
         </div>
         <div class="right">
@@ -106,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                  <div class="step-item">
                     <div class="step-item--title">
                         <h1>Blog post details</h1>
-                        <form name="myform" method="post" action="/BLOGS/bloga_lapa2.php?id=<?php echo $entry_id; ?>">
+                        <form name="myform" method="post" action="bloga_lapa4.php<?php if (isset($_GET['id'])) {echo '?id=' . $_GET['id'];}?>">
                             <label for="title">Title</label><br>
                             <input type="text" name="title" placeholder="Enter the title" value="<?php echo htmlspecialchars($title); ?>" required><br><br>
 
@@ -139,8 +142,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <input class="submit" type="submit" value="Save">
                         </form>
-
-
                     </div>
                 </div>
             </div>
@@ -155,5 +156,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Adjust the path to the JavaScript file using the root-relative path -->
     <script src="/BLOGS/js/script.js"></script>
+
+
+    <!-- Check if the form submission was successful (you can modify this based on your actual implementation) -->
+    <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($result) && $result): ?>
+        <!-- Clear the form fields after a successful form submission -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var form = document.forms["myform"];
+                form.reset();
+            });
+        </script>
+    <?php endif;?>
 </body>
 </html>
