@@ -95,21 +95,3 @@ h3 {
     bottom:0px;
     color: white;
 }
-
-@media (max-width: 576px){
-    .left #line{
-        display: none;
-    }
-}
-
-@media (max-width: 576px) {
-    nav ul{
-       display: none;
-   }
-}
-
-@media (max-width: 576px) {
-     .footer p{
-        font-size: 14pt;
-    }
-}
